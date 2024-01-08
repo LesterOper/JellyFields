@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LevelPatterns>
+    <LevelPattern>
+        <RowData row = "0 0 0 0 0"/>
+        <RowData row = "0 0 1 0 0"/>
+        <RowData row = "0 1 1 1 0"/>
+        <RowData row = "0 0 1 0 0"/>
+        <RowData row = "0 0 0 0 0"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "0 0 0 0 0"/>
+        <RowData row = "0 1 1 1 0"/>
+        <RowData row = "0 1 1 1 0"/>
+        <RowData row = "0 1 1 1 0"/>
+        <RowData row = "0 0 0 0 0"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "0 0 0 0 0"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "0 0 0 0 0"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 0 0 0 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "0 1 1 1 0"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 0 0 0 1"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 0 0 0 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 0 0 0 1"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 1 0 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 0 1 1"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 1 0 1 1"/>
+        <RowData row = "1 1 0 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 0 1 1"/>
+        <RowData row = "1 1 0 1 1"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "0 1 1 1 0"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+    </LevelPattern>
+    <LevelPattern>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "0 0 1 0 0"/>
+        <RowData row = "1 1 1 1 1"/>
+        <RowData row = "1 1 1 1 1"/>
+    </LevelPattern>
+</LevelPatterns>
