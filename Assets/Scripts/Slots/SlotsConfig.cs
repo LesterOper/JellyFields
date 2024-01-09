@@ -10,7 +10,7 @@ namespace Slots
     {
         [SerializeField]private List<SubSlotData> SubSlotDatas;
 
-        public SubSlotData GetSubSlotSprite(SubSlotColorType subSlotColorType, SubSlotShapeType subSlotShapeType) =>
+        public SubSlotData GetSubSlotData(SubSlotColorType subSlotColorType) =>
             SubSlotDatas.FirstOrDefault(slot => slot.SubSlotColorType == subSlotColorType);
     }
 

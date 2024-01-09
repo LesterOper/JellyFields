@@ -12,4 +12,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ea3958b04e4c72865de44bd237ab96, type: 3}
   m_Name: SlotsConfig
   m_EditorClassIdentifier: 
-  SubSlotDatas: []
+  SubSlotDatas:
+  - SubSlotColorType: 1
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: -506278768, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: -518299971, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: 854820032, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 2
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 1595263363, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: 318693774, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: -421338106, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 3
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 1685441259, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: -474460761, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: -1038942348, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 4
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 975765885, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: -1899445941, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: 205653247, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 5
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 353939013, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: 1723733745, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: 291214317, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 6
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 1684384618, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: 1451234901, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: -1809079514, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 7
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 123791983, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: -32253913, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: 1724103513, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 8
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: -1793994617, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: 1451095331, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: 1738751368, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 9
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: -112724750, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: 783900315, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: -64253156, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+  - SubSlotColorType: 10
+    SubSlotShapeDatas:
+    - SubSlotShapeType: 1
+      Sprite: {fileID: 660897791, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 2
+      Sprite: {fileID: 2123978325, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}
+    - SubSlotShapeType: 3
+      Sprite: {fileID: 1127183460, guid: 7733b9b13416e4043a44e90bb14bc55d, type: 3}

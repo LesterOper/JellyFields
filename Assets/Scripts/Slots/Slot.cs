@@ -1,22 +1,29 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using Slots;
 using UnityEngine;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class Slot : MonoBehaviour
 {
     [SerializeField] private SubSlot _subSlotPrefab;
+    [SerializeField] private List<Transform> rows;
     private GridSlotContainer _gridSlotContainer;
 
     private void Awake()
     {
-        _gridSlotContainer = new GridSlotContainer(_subSlotPrefab);
+        _gridSlotContainer = new GridSlotContainer(this, _subSlotPrefab);
     }
 
-    public void Initialize()
+    public void Initialize(SlotsConfig slotsConfig)
     {
-        _gridSlotContainer.Initialize();
+        _gridSlotContainer.Initialize(ref rows, slotsConfig);
+    }
+
+    public void InitializeEmptySlot()
+    {
+        
     }
 }
 
@@ -25,25 +32,60 @@ public class GridSlotContainer
 {
     private SubSlot _prefab;
     private SubSlot[,] _subSlots;
+    private int subSlotsCount;
+    private GridLayoutGroup _gridLayoutGroup;
+    private SlotStateNormalizer _stateNormalizer;
 
-    public GridSlotContainer(SubSlot prefab)
+    public int SubSlotsCount => subSlotsCount;
+
+    public SubSlot[,] SubSlots => _subSlots;
+
+    public GridSlotContainer(Slot slot, SubSlot prefab)
     {
-        _subSlots= new SubSlot[2, 2];
+        _gridLayoutGroup = slot.GetComponent<GridLayoutGroup>();
         _prefab = prefab;
+        _stateNormalizer = new SlotStateNormalizer(this);
     }
 
-    public void Initialize()
+    public void Initialize(ref List<Transform> rows, SlotsConfig slotsConfig)
     {
-        for (int i = 0; i < _subSlots.GetUpperBound(0) + 1; i++)
+        subSlotsCount = RandomSubSlotsCountInSlot();
+        int rowCount = subSlotsCount > 1 ? 2 : 1;
+        int columnCount = subSlotsCount > 2 ? 2 : 1;
+        _subSlots = new SubSlot[rowCount, columnCount];
+        //_gridLayoutGroup.constraintCount = subSlotsCount > 2 ? 2 : 1;
+        int subSlotsBuf = subSlotsCount;
+        int rowIndex = 0;
+        for (int i = 0; i < rowCount; i++)
         {
-            for (int j = 0; j < _subSlots.GetUpperBound(1) + 1; j++)
+            for (int j = 0; j < columnCount; j++)
             {
-                int rand = Random.Range(0, 2);
-                if (rand == 1)
+                if(subSlotsBuf > 0)
                 {
-                    
+                    SubSlot slot = Object.Instantiate(_prefab, rows[i]);
+                    slot = SetupSubSlot(slot, slotsConfig);
+                    subSlotsBuf--;
+                    _subSlots[i, j] = slot;
                 }
             }
         }
+        
+        _stateNormalizer.NormalizeSlot(ref rows);
+    }
+
+    private SubSlot SetupSubSlot(SubSlot slot, SlotsConfig slotsConfig)
+    {
+        SubSlotColorType subSlotColorType = RandomSubSlotType();
+        SubSlotData subSlotData = slotsConfig.GetSubSlotData(subSlotColorType);
+        slot.Initialize(subSlotData);
+        return slot;
+    }
+    
+    private int RandomSubSlotsCountInSlot() => Random.Range(1, 5);
+    private SubSlotColorType RandomSubSlotType() => (SubSlotColorType) Random.Range(1, 11);
+
+    public void NormalizeCellSizeOfGridLayoutGroup(Vector2 cellSize)
+    {
+        _gridLayoutGroup.cellSize = cellSize;
     }
 }

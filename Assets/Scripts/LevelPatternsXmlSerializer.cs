@@ -20,6 +20,9 @@ namespace DefaultNamespace
 
         public int[,] ParseToIntMap(int mapPatternIndex) => 
             _levelPatterns.LevelPatternses[mapPatternIndex].GetParsedToIntMapPattern();
+
+        public LevelPattern GetCurrentLevelPattern(int mapPatternIndex) =>
+            _levelPatterns.LevelPatternses[mapPatternIndex];
     }
     
     [XmlRoot(nameof(LevelPatterns))]
@@ -34,6 +37,11 @@ namespace DefaultNamespace
         [XmlElement(nameof(RowData))] 
         public RowData[] RowDatas;
 
+        [XmlAttribute("minAvailableSlots")] 
+        public int MinAvailableSlots;
+        [XmlAttribute("maxAvailableSlots")] 
+        public int MaxAvailableSlots;
+
         public int[,] GetParsedToIntMapPattern()
         {
             int rowCount = RowDatas.Length;
@@ -45,7 +53,7 @@ namespace DefaultNamespace
                 int[] currentRow = RowDatas[i].GetParsedToIntRow();
                 for (int j = 0; j < columnCount; j++)
                 {
-                    mapPattern[i, j] = currentRow[i];
+                    mapPattern[i, j] = currentRow[j];
                 }
             }
 

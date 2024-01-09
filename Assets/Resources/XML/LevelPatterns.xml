@@ -1,69 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LevelPatterns>
-    <LevelPattern>
-        <RowData row = "0 0 0 0 0"/>
-        <RowData row = "0 0 1 0 0"/>
-        <RowData row = "0 1 1 1 0"/>
-        <RowData row = "0 0 1 0 0"/>
-        <RowData row = "0 0 0 0 0"/>
+    <LevelPattern minAvailableSlots = "1" maxAvailableSlots = "3">
+        <RowData row = "0 1 0"/>
+        <RowData row = "1 1 1"/>
+        <RowData row = "0 1 0"/>
     </LevelPattern>
-    <LevelPattern>
-        <RowData row = "0 0 0 0 0"/>
+    <LevelPattern minAvailableSlots = "2" maxAvailableSlots = "4">
         <RowData row = "0 1 1 1 0"/>
         <RowData row = "0 1 1 1 0"/>
         <RowData row = "0 1 1 1 0"/>
-        <RowData row = "0 0 0 0 0"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "2" maxAvailableSlots = "5">
         <RowData row = "0 0 0 0 0"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "0 0 0 0 0"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "3" maxAvailableSlots = "6">
         <RowData row = "1 0 0 0 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "0 1 1 1 0"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 0 0 0 1"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "3" maxAvailableSlots = "6">
         <RowData row = "1 0 0 0 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 0 0 0 1"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "1" maxAvailableSlots = "5">
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "2" maxAvailableSlots = "7">
         <RowData row = "1 1 0 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 0 1 1"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "2" maxAvailableSlots = "7">
         <RowData row = "1 1 0 1 1"/>
         <RowData row = "1 1 0 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 0 1 1"/>
         <RowData row = "1 1 0 1 1"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "3" maxAvailableSlots = "6">
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "0 1 1 1 0"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
     </LevelPattern>
-    <LevelPattern>
+    <LevelPattern minAvailableSlots = "3" maxAvailableSlots = "7">
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "1 1 1 1 1"/>
         <RowData row = "0 0 1 0 0"/>

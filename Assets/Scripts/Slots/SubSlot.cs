@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Slots;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,25 @@ public class SubSlot : MonoBehaviour
     
     public void Initialize(SubSlotData subSlotData)
     {
+        if (subSlotData == null)
+        {
+            //gameObject.SetActive(false);
+            subSlotIcon.DOFade(0, 0);
+            return;
+        }
         _subSlotData = subSlotData;
+        SetupView();
+    }
+
+    private void SetupView()
+    {
+        subSlotIcon.sprite = _subSlotData.GetSubSlotShapeSprite(SubSlotShapeType.Y_X_HALF);
+    }
+
+    public void SetupView(SubSlotShapeType subSlotShapeType)
+    {
+        subSlotIcon.sprite = _subSlotData.GetSubSlotShapeSprite(subSlotShapeType);
+        subSlotIcon.SetNativeSize();
     }
 }
 
