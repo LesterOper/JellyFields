@@ -10,20 +10,30 @@ public class Slot : MonoBehaviour
     [SerializeField] private SubSlot _subSlotPrefab;
     [SerializeField] private List<Transform> rows;
     private GridSlotContainer _gridSlotContainer;
+    private SlotDrag _slotDrag;
+    private Vector2 positionInMap;
 
     private void Awake()
     {
         _gridSlotContainer = new GridSlotContainer(this, _subSlotPrefab);
+        _slotDrag = GetComponent<SlotDrag>();
+        _slotDrag.Initialize(this);
     }
 
-    public void Initialize(SlotsConfig slotsConfig)
+    public void Initialize(SlotsConfig slotsConfig, Vector2 positionInMap)
     {
         _gridSlotContainer.Initialize(ref rows, slotsConfig);
+        this.positionInMap = positionInMap;
+    }
+
+    public void Initialize(Vector2 positionInMap)
+    {
+        this.positionInMap = positionInMap;
     }
 
     public void InitializeEmptySlot()
     {
-        
+        Destroy(gameObject);
     }
 }
 
@@ -53,7 +63,6 @@ public class GridSlotContainer
         int rowCount = subSlotsCount > 1 ? 2 : 1;
         int columnCount = subSlotsCount > 2 ? 2 : 1;
         _subSlots = new SubSlot[rowCount, columnCount];
-        //_gridLayoutGroup.constraintCount = subSlotsCount > 2 ? 2 : 1;
         int subSlotsBuf = subSlotsCount;
         int rowIndex = 0;
         for (int i = 0; i < rowCount; i++)
@@ -62,7 +71,7 @@ public class GridSlotContainer
             {
                 if(subSlotsBuf > 0)
                 {
-                    SubSlot slot = Object.Instantiate(_prefab, rows[i]);
+                    SubSlot slot = Object.Instantiate(_prefab, rows[i].transform);
                     slot = SetupSubSlot(slot, slotsConfig);
                     subSlotsBuf--;
                     _subSlots[i, j] = slot;
@@ -89,3 +98,4 @@ public class GridSlotContainer
         _gridLayoutGroup.cellSize = cellSize;
     }
 }
+

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Slots;
 using UnityEngine;
 
 public class SlotStateNormalizer

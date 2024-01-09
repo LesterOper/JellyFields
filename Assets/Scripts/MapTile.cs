@@ -10,6 +10,12 @@ namespace DefaultNamespace
         private CanvasGroup _canvasGroup;
         private Slot _slot;
         private bool _activeTile;
+        private bool hasSlot;
+        private Vector2 positionInMap;
+
+        public Vector2 PositionInMap => positionInMap;
+
+        public bool HasSlot => hasSlot;
 
         public bool ActiveTile => _activeTile;
 
@@ -25,10 +31,24 @@ namespace DefaultNamespace
             ShowOrHide();
         }
 
-        public void Initialize(bool available, SlotsConfig slotsConfig)
+        public void Initialize(bool available, SlotsConfig slotsConfig, Vector2 positionInMap)
         {
-            if(available) _slot.InitializeEmptySlot();
-            else _slot.Initialize(slotsConfig);
+            this.positionInMap = positionInMap;
+            if (available)
+            {
+                _slot.InitializeEmptySlot();
+                _slot = null;
+            }
+            else _slot.Initialize(slotsConfig, this.positionInMap);
+
+            hasSlot = !available;
+        }
+
+        public void Initialize(Slot insertedSlot)
+        {
+            hasSlot = true;
+            _slot = insertedSlot;
+            _slot.Initialize(positionInMap);
         }
 
         private void ShowOrHide()

@@ -1,6 +1,9 @@
-﻿using Slots;
+﻿using System;
+using System.Collections.Generic;
+using Slots;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace DefaultNamespace
 {
@@ -8,9 +11,27 @@ namespace DefaultNamespace
     {
         [SerializeField] private GridLayoutGroup gridLayoutGroup;
         [SerializeField] private SlotsConfig slotsConfig;
-        [SerializeField] private Slot slotPrefab;
         [SerializeField] private MapTile _mapTile;
+        [SerializeField] private NewSlotsGenerator _newSlotsGenerator;
         private Map _map;
+
+        private void OnEnable()
+        {
+            EventsInvoker.StartListening(EventsKeys.MERGE, Merge);
+        }
+
+        private void OnDisable()
+        {
+            EventsInvoker.StopListening(EventsKeys.MERGE, Merge);
+        }
+
+        private void Merge(Dictionary<string, object> args)
+        {
+            Vector2 position = (Vector2)args[EventsKeys.MERGE];
+            _map.MapProperty = Merger.Merge(_map.MapProperty, position);
+            _newSlotsGenerator.GenerateNewSlot();
+        }
+
         public void Initialize()
         {
             _map = new Map(_mapTile, gridLayoutGroup);
@@ -22,6 +43,13 @@ namespace DefaultNamespace
     public class Map
     {
         private MapTile[,] _map;
+
+        public MapTile[,] MapProperty
+        {
+            get { return _map; }
+            set => _map = value;
+        }
+
         private MapGenerator _mapGenerator;
         private MapTile _mapTilePrefab;
 
@@ -46,20 +74,21 @@ namespace DefaultNamespace
                 for (int j = 0; j < columnCount; j++)
                 {
                     if(!_map[i,j].ActiveTile) continue;
+                    Vector2 pos = new Vector2(i, j);
                     bool available = Random.Range(0, 2) == 1;
 
                     if (available)
                     {
-                        if(randAvailableTiles <=0) _map[i,j].Initialize(false, slotsConfig);
+                        if(randAvailableTiles <=0) _map[i,j].Initialize(false, slotsConfig, pos);
                         else
                         {
-                            _map[i, j].Initialize(true, slotsConfig);
+                            _map[i, j].Initialize(true, slotsConfig, pos);
                             randAvailableTiles--;
                         }
                         continue;
                     }
                     
-                    _map[i,j].Initialize(false, slotsConfig);
+                    _map[i,j].Initialize(false, slotsConfig, pos);
                 }
             }
         }
